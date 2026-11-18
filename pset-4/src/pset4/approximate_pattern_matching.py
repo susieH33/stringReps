@@ -13,10 +13,12 @@ def approximatePatternMatching(pattern: str, text: str, d: int) -> list[int]:
     matches = []
 
     i = 0
-    while i < len(text)-len(pattern):
+    while i < len(text)-len(pattern)+1:
         if(hammingDistance(pattern, text[i:i+(len(pattern))])<=d):
+            #print("meow")
             matches.append(i)
         i = i+1
 
     return matches
 
+print(approximatePatternMatching("A", "AAAAAAAAAA", 1))
